@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.NoteMapper">
+    <resultMap id="noteMap" type="com.codenote.entity.Note">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="summary" property="summary"/>
+        <result column="category_id" property="categoryId"/>
+        <result column="user_id" property="userId"/>
+        <result column="status" property="status"/>
+        <result column="view_count" property="viewCount"/>
+        <result column="is_top" property="isTop"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO note (title, content, summary, category_id, user_id, status, view_count, is_top, create_time, update_time) VALUES (#{title}, #{content}, #{summary}, #{categoryId}, #{userId}, #{status}, #{viewCount}, #{isTop}, #{createTime}, #{updateTime})
+    </insert>
+    <delete id="deleteById">DELETE FROM note WHERE id=#{id}</delete>
+    <update id="update">UPDATE note SET title=#{title}, content=#{content}, summary=#{summary}, category_id=#{categoryId}, user_id=#{userId}, status=#{status}, view_count=#{viewCount}, is_top=#{isTop}, create_time=#{createTime}, update_time=#{updateTime} WHERE id=#{id}</update>
+    <select id="findById" resultMap="noteMap">SELECT id, title, content, summary, category_id, user_id, status, view_count, is_top, create_time, update_time FROM note WHERE id=#{id}</select>
+    <select id="findAll" resultMap="noteMap">SELECT id, title, content, summary, category_id, user_id, status, view_count, is_top, create_time, update_time FROM note ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="noteMap">SELECT id, title, content, summary, category_id, user_id, status, view_count, is_top, create_time, update_time FROM note WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM note</select>
+</mapper>
