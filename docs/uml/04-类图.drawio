@@ -1,0 +1,63 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="类图" id="class">
+    <mxGraphModel dx="1200" dy="800" grid="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="CodeNote Learning Studio 类图" style="text;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="300" height="30" as="geometry"/>
+        </mxCell>
+        <!-- Entity层 -->
+        <mxCell id="box1" value="Entity层" style="rounded=0;fillColor=#dae8fc;strokeColor=#6c8ebf;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="50" y="50" width="250" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="c1" value="&lt;&lt;Entity&gt;&gt;&#xa;Note&#xa;---&#xa;-id: Integer&#xa;-title: String&#xa;-content: String&#xa;---&#xa;+getter/setter()" style="swimlane;fontStyle=0;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeLast=0;collapsible=1;marginBottom=0;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="70" y="80" width="100" height="120" as="geometry"/>
+        </mxCell>
+        <mxCell id="c2" value="&lt;&lt;Entity&gt;&gt;&#xa;User&#xa;---&#xa;-id: Integer&#xa;-username: String&#xa;---&#xa;+getter/setter()" style="swimlane;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="180" y="80" width="100" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="c3" value="&lt;&lt;Entity&gt;&gt;&#xa;Document&#xa;---&#xa;-id: Integer&#xa;-title: String&#xa;---&#xa;+getter/setter()" style="swimlane;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="70" y="210" width="100" height="110" as="geometry"/>
+        </mxCell>
+        <!-- Mapper层 -->
+        <mxCell id="box2" value="Mapper层" style="rounded=0;fillColor=#d5e8d4;strokeColor=#82b366;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="320" y="50" width="200" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="m1" value="&lt;&lt;interface&gt;&gt;&#xa;NoteMapper&#xa;---&#xa;+insert(Note)&#xa;+deleteById(id)&#xa;+update(Note)&#xa;+findById(id)&#xa;+findAll()" style="swimlane;fillColor=#d4edda;strokeColor=#28a745" vertex="1" parent="1">
+          <mxGeometry x="340" y="80" width="120" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="m2" value="&lt;&lt;interface&gt;&gt;&#xa;UserMapper&#xa;---&#xa;+findByUsername()" style="swimlane;fillColor=#d4edda;strokeColor=#28a745" vertex="1" parent="1">
+          <mxGeometry x="340" y="220" width="120" height="80" as="geometry"/>
+        </mxCell>
+        <!-- Service层 -->
+        <mxCell id="box3" value="Service层" style="rounded=0;fillColor=#ffe6cc;strokeColor=#d79b00;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="540" y="50" width="200" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="s1" value="&lt;&lt;interface&gt;&gt;&#xa;NoteService&#xa;---&#xa;+save(Note)&#xa;+delete(id)&#xa;+getById(id)&#xa;+getAll()" style="swimlane;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="560" y="80" width="120" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="&lt;&lt;Service&gt;&gt;&#xa;NoteServiceImpl&#xa;---&#xa;-noteMapper&#xa;---&#xa;+save()&#xa;+delete()&#xa;+getById()&#xa;+getAll()" style="swimlane;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="560" y="200" width="120" height="130" as="geometry"/>
+        </mxCell>
+        <!-- Controller层 -->
+        <mxCell id="box4" value="Controller层" style="rounded=0;fillColor=#e1d5e7;strokeColor=#9673a6;verticalAlign=top;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="760" y="50" width="200" height="300" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl" value="&lt;&lt;Controller&gt;&gt;&#xa;NoteController&#xa;---&#xa;-noteService&#xa;---&#xa;+list()&#xa;+create()&#xa;+save()&#xa;+edit()&#xa;+delete()" style="swimlane;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="780" y="80" width="130" height="150" as="geometry"/>
+        </mxCell>
+        <!-- 依赖关系 -->
+        <mxCell id="dep1" value="" style="endArrow=open;endSize=12;dashed=1;html=1" edge="1" parent="1" source="s2" target="m1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="dep2" value="" style="endArrow=open;endSize=12;dashed=1;html=1" edge="1" parent="1" source="ctrl" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="impl" value="" style="endArrow=block;endFill=0;dashed=1;html=1" edge="1" parent="1" source="s2" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

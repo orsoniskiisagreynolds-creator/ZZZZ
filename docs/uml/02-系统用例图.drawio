@@ -1,0 +1,112 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="系统用例图" id="usecase">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="CodeNote Learning Studio 系统用例图" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="350" y="10" width="400" height="30" as="geometry"/>
+        </mxCell>
+        <!-- 系统边界 -->
+        <mxCell id="sys" value="CodeNote Learning Studio" style="rounded=0;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;dashed=1;verticalAlign=top;fontSize=14;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="200" y="60" width="700" height="700" as="geometry"/>
+        </mxCell>
+        <!-- 用户 -->
+        <mxCell id="user" value="用户&#xa;(我)" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;fontSize=12" vertex="1" parent="1">
+          <mxGeometry x="80" y="350" width="40" height="80" as="geometry"/>
+        </mxCell>
+        <!-- 笔记模块用例 -->
+        <mxCell id="uc1" value="查看SSM教学演示" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="250" y="80" width="140" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc2" value="管理笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="450" y="80" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc3" value="管理文档" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="600" y="80" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc4" value="管理代码片段" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="250" y="180" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc5" value="管理学习路径" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="420" y="180" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc6" value="AI对话" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="590" y="180" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc7" value="导出笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="250" y="280" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc8" value="管理外部资源" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6" vertex="1" parent="1">
+          <mxGeometry x="400" y="280" width="120" height="50" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc9" value="登录系统" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656" vertex="1" parent="1">
+          <mxGeometry x="570" y="280" width="100" height="50" as="geometry"/>
+        </mxCell>
+        <!-- 子用例 -->
+        <mxCell id="uc10" value="新建笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="300" y="380" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc11" value="编辑笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="420" y="380" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc12" value="删除笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="540" y="380" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc13" value="搜索笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="660" y="380" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc14" value="分类管理" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="300" y="460" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc15" value="标签管理" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="420" y="460" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc16" value="版本历史" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="540" y="460" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="uc17" value="分享笔记" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="660" y="460" width="90" height="40" as="geometry"/>
+        </mxCell>
+        <!-- 连线 -->
+        <mxCell id="line1" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line2" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line3" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line4" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line5" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line6" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line7" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc7">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line8" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc8">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="line9" style="endArrow=none;html=1" edge="1" parent="1" source="user" target="uc9">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <!-- include关系 -->
+        <mxCell id="inc1" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1" edge="1" parent="1" source="uc2" target="uc10">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inc2" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1" edge="1" parent="1" source="uc2" target="uc11">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="inc3" value="&lt;&lt;include&gt;&gt;" style="endArrow=open;endSize=12;dashed=1;html=1" edge="1" parent="1" source="uc2" target="uc12">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

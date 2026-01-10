@@ -1,0 +1,106 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="保存笔记序列图" id="seq">
+    <mxGraphModel dx="1200" dy="800" grid="1">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="保存笔记 序列图" style="text;fontSize=18;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="400" y="10" width="200" height="30" as="geometry"/>
+        </mxCell>
+        <!-- 参与者 -->
+        <mxCell id="user" value="用户" style="shape=umlActor;html=1" vertex="1" parent="1">
+          <mxGeometry x="80" y="60" width="30" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="browser" value="浏览器&#xa;(JSP)" style="rounded=1;fillColor=#dae8fc;strokeColor=#6c8ebf" vertex="1" parent="1">
+          <mxGeometry x="170" y="60" width="80" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="ctrl" value="NoteController" style="rounded=1;fillColor=#d5e8d4;strokeColor=#82b366" vertex="1" parent="1">
+          <mxGeometry x="300" y="60" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="svc" value="NoteService" style="rounded=1;fillColor=#ffe6cc;strokeColor=#d79b00" vertex="1" parent="1">
+          <mxGeometry x="450" y="60" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="mapper" value="NoteMapper" style="rounded=1;fillColor=#f8cecc;strokeColor=#b85450" vertex="1" parent="1">
+          <mxGeometry x="600" y="60" width="100" height="40" as="geometry"/>
+        </mxCell>
+        <mxCell id="db" value="MySQL" style="shape=cylinder3;fillColor=#1ba1e2;strokeColor=#006EAF;fontColor=#fff" vertex="1" parent="1">
+          <mxGeometry x="740" y="50" width="60" height="60" as="geometry"/>
+        </mxCell>
+        <!-- 生命线 -->
+        <mxCell id="life1" value="" style="endArrow=none;dashed=1;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="110" as="sourcePoint"/>
+            <mxPoint x="210" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life2" value="" style="endArrow=none;dashed=1;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="110" as="sourcePoint"/>
+            <mxPoint x="350" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life3" value="" style="endArrow=none;dashed=1;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="110" as="sourcePoint"/>
+            <mxPoint x="500" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life4" value="" style="endArrow=none;dashed=1;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="110" as="sourcePoint"/>
+            <mxPoint x="650" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="life5" value="" style="endArrow=none;dashed=1;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="110" as="sourcePoint"/>
+            <mxPoint x="770" y="500" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <!-- 消息 -->
+        <mxCell id="msg1" value="1. 填写笔记内容" style="endArrow=classic;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="95" y="150" as="sourcePoint"/>
+            <mxPoint x="210" y="150" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg2" value="2. POST /note/save" style="endArrow=classic;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="210" y="200" as="sourcePoint"/>
+            <mxPoint x="350" y="200" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg3" value="3. noteService.save(note)" style="endArrow=classic;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="250" as="sourcePoint"/>
+            <mxPoint x="500" y="250" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg4" value="4. noteMapper.insert(note)" style="endArrow=classic;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="500" y="300" as="sourcePoint"/>
+            <mxPoint x="650" y="300" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg5" value="5. INSERT INTO note" style="endArrow=classic;html=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="650" y="350" as="sourcePoint"/>
+            <mxPoint x="770" y="350" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg6" value="6. 返回影响行数" style="endArrow=classic;html=1;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="770" y="380" as="sourcePoint"/>
+            <mxPoint x="650" y="380" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="msg7" value="7. redirect:/note/list" style="endArrow=classic;html=1;dashed=1" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="350" y="450" as="sourcePoint"/>
+            <mxPoint x="210" y="450" as="targetPoint"/>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
