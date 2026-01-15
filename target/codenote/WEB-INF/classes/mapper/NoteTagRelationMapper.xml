@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.NoteTagRelationMapper">
+    <resultMap id="noteTagRelationMap" type="com.codenote.entity.NoteTagRelation">
+        <result column="id" property="id"/>
+        <result column="note_id" property="noteId"/>
+        <result column="tag_id" property="tagId"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO note_tag_relation (note_id, tag_id) VALUES (#{noteId}, #{tagId})
+    </insert>
+    <delete id="deleteById">DELETE FROM note_tag_relation WHERE id=#{id}</delete>
+    <update id="update">UPDATE note_tag_relation SET note_id=#{noteId}, tag_id=#{tagId} WHERE id=#{id}</update>
+    <select id="findById" resultMap="noteTagRelationMap">SELECT id, note_id, tag_id FROM note_tag_relation WHERE id=#{id}</select>
+    <select id="findAll" resultMap="noteTagRelationMap">SELECT id, note_id, tag_id FROM note_tag_relation ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="noteTagRelationMap">SELECT id, note_id, tag_id FROM note_tag_relation WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM note_tag_relation</select>
+</mapper>

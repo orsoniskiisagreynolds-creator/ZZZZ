@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.StepMapper">
+    <resultMap id="stepMap" type="com.codenote.entity.Step">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="description" property="description"/>
+        <result column="code" property="code"/>
+        <result column="layer" property="layer"/>
+        <result column="file_index" property="fileIndex"/>
+        <result column="sort_order" property="sortOrder"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO step (title, description, code, layer, file_index, sort_order) VALUES (#{title}, #{description}, #{code}, #{layer}, #{fileIndex}, #{sortOrder})
+    </insert>
+    <delete id="deleteById">DELETE FROM step WHERE id=#{id}</delete>
+    <update id="update">UPDATE step SET title=#{title}, description=#{description}, code=#{code}, layer=#{layer}, file_index=#{fileIndex}, sort_order=#{sortOrder} WHERE id=#{id}</update>
+    <select id="findById" resultMap="stepMap">SELECT id, title, description, code, layer, file_index, sort_order FROM step WHERE id=#{id}</select>
+    <select id="findAll" resultMap="stepMap">SELECT id, title, description, code, layer, file_index, sort_order FROM step ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="stepMap">SELECT id, title, description, code, layer, file_index, sort_order FROM step WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM step</select>
+</mapper>

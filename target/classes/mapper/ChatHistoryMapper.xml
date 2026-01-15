@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.ChatHistoryMapper">
+    <resultMap id="chatHistoryMap" type="com.codenote.entity.ChatHistory">
+        <result column="id" property="id"/>
+        <result column="session_id" property="sessionId"/>
+        <result column="role" property="role"/>
+        <result column="content" property="content"/>
+        <result column="tokens" property="tokens"/>
+        <result column="user_id" property="userId"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO chat_history (session_id, role, content, tokens, user_id, create_time) VALUES (#{sessionId}, #{role}, #{content}, #{tokens}, #{userId}, #{createTime})
+    </insert>
+    <delete id="deleteById">DELETE FROM chat_history WHERE id=#{id}</delete>
+    <update id="update">UPDATE chat_history SET session_id=#{sessionId}, role=#{role}, content=#{content}, tokens=#{tokens}, user_id=#{userId}, create_time=#{createTime} WHERE id=#{id}</update>
+    <select id="findById" resultMap="chatHistoryMap">SELECT id, session_id, role, content, tokens, user_id, create_time FROM chat_history WHERE id=#{id}</select>
+    <select id="findAll" resultMap="chatHistoryMap">SELECT id, session_id, role, content, tokens, user_id, create_time FROM chat_history ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="chatHistoryMap">SELECT id, session_id, role, content, tokens, user_id, create_time FROM chat_history WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM chat_history</select>
+</mapper>

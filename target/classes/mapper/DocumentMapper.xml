@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.DocumentMapper">
+    <resultMap id="documentMap" type="com.codenote.entity.Document">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="doc_type" property="docType"/>
+        <result column="category" property="category"/>
+        <result column="user_id" property="userId"/>
+        <result column="is_public" property="isPublic"/>
+        <result column="view_count" property="viewCount"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO document (title, content, doc_type, category, user_id, is_public, view_count, create_time, update_time) VALUES (#{title}, #{content}, #{docType}, #{category}, #{userId}, #{isPublic}, #{viewCount}, #{createTime}, #{updateTime})
+    </insert>
+    <delete id="deleteById">DELETE FROM document WHERE id=#{id}</delete>
+    <update id="update">UPDATE document SET title=#{title}, content=#{content}, doc_type=#{docType}, category=#{category}, user_id=#{userId}, is_public=#{isPublic}, view_count=#{viewCount}, create_time=#{createTime}, update_time=#{updateTime} WHERE id=#{id}</update>
+    <select id="findById" resultMap="documentMap">SELECT id, title, content, doc_type, category, user_id, is_public, view_count, create_time, update_time FROM document WHERE id=#{id}</select>
+    <select id="findAll" resultMap="documentMap">SELECT id, title, content, doc_type, category, user_id, is_public, view_count, create_time, update_time FROM document ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="documentMap">SELECT id, title, content, doc_type, category, user_id, is_public, view_count, create_time, update_time FROM document WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM document</select>
+</mapper>

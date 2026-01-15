@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.CodeSnippetMapper">
+    <resultMap id="codeSnippetMap" type="com.codenote.entity.CodeSnippet">
+        <result column="id" property="id"/>
+        <result column="title" property="title"/>
+        <result column="code" property="code"/>
+        <result column="language" property="language"/>
+        <result column="description" property="description"/>
+        <result column="user_id" property="userId"/>
+        <result column="is_favorite" property="isFavorite"/>
+        <result column="use_count" property="useCount"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO code_snippet (title, code, language, description, user_id, is_favorite, use_count, create_time, update_time) VALUES (#{title}, #{code}, #{language}, #{description}, #{userId}, #{isFavorite}, #{useCount}, #{createTime}, #{updateTime})
+    </insert>
+    <delete id="deleteById">DELETE FROM code_snippet WHERE id=#{id}</delete>
+    <update id="update">UPDATE code_snippet SET title=#{title}, code=#{code}, language=#{language}, description=#{description}, user_id=#{userId}, is_favorite=#{isFavorite}, use_count=#{useCount}, create_time=#{createTime}, update_time=#{updateTime} WHERE id=#{id}</update>
+    <select id="findById" resultMap="codeSnippetMap">SELECT id, title, code, language, description, user_id, is_favorite, use_count, create_time, update_time FROM code_snippet WHERE id=#{id}</select>
+    <select id="findAll" resultMap="codeSnippetMap">SELECT id, title, code, language, description, user_id, is_favorite, use_count, create_time, update_time FROM code_snippet ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="codeSnippetMap">SELECT id, title, code, language, description, user_id, is_favorite, use_count, create_time, update_time FROM code_snippet WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM code_snippet</select>
+</mapper>

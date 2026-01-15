@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.codenote.mapper.ExportLogMapper">
+    <resultMap id="exportLogMap" type="com.codenote.entity.ExportLog">
+        <result column="id" property="id"/>
+        <result column="file_name" property="fileName"/>
+        <result column="file_type" property="fileType"/>
+        <result column="file_path" property="filePath"/>
+        <result column="file_size" property="fileSize"/>
+        <result column="source_type" property="sourceType"/>
+        <result column="source_id" property="sourceId"/>
+        <result column="user_id" property="userId"/>
+        <result column="status" property="status"/>
+        <result column="create_time" property="createTime"/>
+    </resultMap>
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO export_log (file_name, file_type, file_path, file_size, source_type, source_id, user_id, status, create_time) VALUES (#{fileName}, #{fileType}, #{filePath}, #{fileSize}, #{sourceType}, #{sourceId}, #{userId}, #{status}, #{createTime})
+    </insert>
+    <delete id="deleteById">DELETE FROM export_log WHERE id=#{id}</delete>
+    <update id="update">UPDATE export_log SET file_name=#{fileName}, file_type=#{fileType}, file_path=#{filePath}, file_size=#{fileSize}, source_type=#{sourceType}, source_id=#{sourceId}, user_id=#{userId}, status=#{status}, create_time=#{createTime} WHERE id=#{id}</update>
+    <select id="findById" resultMap="exportLogMap">SELECT id, file_name, file_type, file_path, file_size, source_type, source_id, user_id, status, create_time FROM export_log WHERE id=#{id}</select>
+    <select id="findAll" resultMap="exportLogMap">SELECT id, file_name, file_type, file_path, file_size, source_type, source_id, user_id, status, create_time FROM export_log ORDER BY id DESC</select>
+    <select id="findByUserId" resultMap="exportLogMap">SELECT id, file_name, file_type, file_path, file_size, source_type, source_id, user_id, status, create_time FROM export_log WHERE user_id=#{userId}</select>
+    <select id="countAll" resultType="int">SELECT COUNT(*) FROM export_log</select>
+</mapper>
